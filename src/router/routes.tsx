@@ -1,7 +1,9 @@
-import { ReactNode, Suspense, lazy } from "react"
+import { ReactNode, Suspense } from "react"
 
-const Home = lazy(() => import('../pages/home'))
-const Blog = lazy(() => import('../pages/blog'))
+// const Home = lazy(() => import('../pages/home'))
+// const Blog = lazy(() => import('../pages/blog'))
+import Home from '../pages/home'
+import Blog from '../pages/blog'
 
 interface RoutesProps {
     path: string
@@ -15,7 +17,7 @@ const routes: RoutesProps[] = [
             <Home />
         </Suspense>
     }, {
-        path: '/blog',
+        path: 'blog',
         element: <Suspense fallback={<div>Loading...</div>}>
             <Blog />
         </Suspense>
