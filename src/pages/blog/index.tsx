@@ -80,14 +80,17 @@ const Blog = (): JSX.Element => {
         getBlogs()
     }, [])
     return (
-        <section
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 px-4 my-4"
-        >
-            {
-                blogs.map(blog => (
-                    <BlogCard key={blog.node.number} title={blog.node.title} labels={blog.node.labels.edges} createdAt={blog.node.createdAt} />
-                ))
-            }
+        <section className="flex justify-center">
+            <div
+                className="w-full max-w-[1024px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 my-4 px-6"
+            >
+
+                {
+                    blogs.map(blog => (
+                        <BlogCard key={blog.node.number} title={blog.node.title} labels={blog.node.labels.edges} createdAt={blog.node.createdAt} />
+                    ))
+                }
+            </div>
         </section>
     )
 }
