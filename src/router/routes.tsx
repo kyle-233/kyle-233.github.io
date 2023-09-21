@@ -1,8 +1,8 @@
 import { ReactNode, lazy } from "react"
 
-const Home = lazy(() => import('../pages/home/index'))
-const Blog = lazy(() => import('../pages/blog/index'))
-const Contact = lazy(() => import('../pages/contact/index'))
+// const Home = lazy(() => import('../pages/home/index.tsx'))
+const Blog = lazy(() => import('../pages/blog/index.tsx'))
+const Contact = lazy(() => import('../pages/contact/index.tsx'))
 
 interface RoutesProps {
     path: string
@@ -12,7 +12,7 @@ interface RoutesProps {
 const routes: RoutesProps[] = [
     {
         path: '/',
-        element: <Home />
+        element: <Blog />
     }, {
         path: 'blog',
         element: <Blog />
