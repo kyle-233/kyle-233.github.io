@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { BrowserRouter } from "react-router-dom"
 import BaseRouter from "./router"
 import Layout from "./layout"
@@ -6,9 +7,11 @@ import Layout from "./layout"
 const App = () => {
   return (
     <Layout>
-      <BrowserRouter>
-        <BaseRouter />
-      </BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <BrowserRouter>
+          <BaseRouter />
+        </BrowserRouter>
+      </Suspense>
     </Layout>
   )
 }
