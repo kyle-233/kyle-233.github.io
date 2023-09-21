@@ -1,1 +1,1 @@
-export { default as request } from './base'
+export * from './base'

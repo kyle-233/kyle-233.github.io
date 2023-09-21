@@ -9,9 +9,8 @@ const graphQLClient = new GraphQLClient(
     }
 )
 
-const request = async <T>(state: string): Promise<T> => {
+export const request = async <T>(state: string): Promise<T> => {
     const query = gql`${state}`
     return await graphQLClient.request(query)
 }
 
-export default request

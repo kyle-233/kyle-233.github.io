@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { request } from "request"
+import { request } from "../../request/index.ts"
 import BlogCard from "../../components/BlogCard"
 
 interface LabelInfo {
