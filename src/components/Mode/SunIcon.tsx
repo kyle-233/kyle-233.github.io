@@ -1,5 +1,6 @@
 
-export const SunIcon = (props) => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const SunIcon = (props: any) => (
     <svg
         aria-hidden="true"
         focusable="false"

@@ -1,5 +1,6 @@
 
-export const MoonIcon = (props) => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const MoonIcon = (props: any) => (
     <svg
         aria-hidden="true"
         focusable="false"
