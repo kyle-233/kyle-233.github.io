@@ -1,5 +1,7 @@
-import { ReactNode } from "react"
-import getPage from "./page"
+import { ReactNode, Suspense, lazy } from "react"
+
+const Home = lazy(() => import('../pages/home'))
+const Blog = lazy(() => import('../pages/blog'))
 
 interface RoutesProps {
     path: string
@@ -9,10 +11,14 @@ interface RoutesProps {
 const routes: RoutesProps[] = [
     {
         path: '/',
-        element: getPage('home')
+        element: <Suspense fallback={<div>Loading...</div>}>
+            <Home />
+        </Suspense>
     }, {
         path: '/blog',
-        element: getPage('blog')
+        element: <Suspense fallback={<div>Loading...</div>}>
+            <Blog />
+        </Suspense>
     }
 ]
 
