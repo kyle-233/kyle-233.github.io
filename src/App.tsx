@@ -1,8 +1,15 @@
+import { BrowserRouter } from "react-router-dom"
+import BaseRouter from "./router"
+import Layout from "./layout"
 
 
 const App = () => {
   return (
-    <section>1</section>
+    <Layout>
+      <BrowserRouter>
+        <BaseRouter />
+      </BrowserRouter>
+    </Layout>
   )
 }
 
