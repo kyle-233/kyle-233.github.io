@@ -24,6 +24,9 @@
     /** alias */
     "baseUrl": ".",
     "paths": {
+      "@/*": [
+        "src/*"
+      ],
       "pages": [
         "src/pages"
       ],
