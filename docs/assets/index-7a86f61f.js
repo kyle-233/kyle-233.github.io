@@ -1,0 +1,1 @@
+import{j as s}from"./index-bb671be0.js";const x=({children:e,className:t})=>s.jsx("section",{className:`flex justify-center ${t}`,children:s.jsx("div",{className:"w-full max-w-[1024px] px-6",children:e})});export{x as C};

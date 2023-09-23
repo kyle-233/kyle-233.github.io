@@ -4,7 +4,7 @@ const graphQLClient = new GraphQLClient(
     'https://api.github.com/graphql',
     {
         headers: {
-            authorization: `Bearer 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`,
+            authorization: `Bearer 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`,
         },
     }
 )

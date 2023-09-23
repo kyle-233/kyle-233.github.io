@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { request } from "../../request/index.ts"
-import BlogCard from "../../components/BlogCard"
+import { BlogCard, Container } from "@/components/index.ts"
+import { Link } from "@nextui-org/react"
+import Layout from "./layout.tsx"
 
 interface LabelInfo {
     node: {
@@ -80,18 +82,21 @@ const Blog = (): JSX.Element => {
         getBlogs()
     }, [])
     return (
-        <section className="flex justify-center">
-            <div
-                className="w-full max-w-[1024px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 my-4 px-6"
-            >
-
-                {
-                    blogs.map(blog => (
-                        <BlogCard key={blog.node.number} title={blog.node.title} labels={blog.node.labels.edges} createdAt={blog.node.createdAt} />
-                    ))
-                }
-            </div>
-        </section>
+        <Layout>
+            <Container>
+                <div
+                    className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 my-4"
+                >
+                    {
+                        blogs.map(blog => (
+                            <Link href={`/blog/${blog.node.number}`} className=" block w-full">
+                                <BlogCard key={blog.node.number} title={blog.node.title} labels={blog.node.labels.edges} createdAt={blog.node.createdAt} />
+                            </Link>
+                        ))
+                    }
+                </div>
+            </Container >
+        </Layout>
     )
 }
 
